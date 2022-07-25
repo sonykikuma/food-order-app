@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
+=======
+
+>>>>>>> d3a606fea618c667c0d93ddf6c6dc95400a5d443
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 import classes from "./AvailableMeals.module.css";
@@ -29,19 +33,29 @@ import classes from "./AvailableMeals.module.css";
     price: 38.99,
   },
 ];*/
+<<<<<<< HEAD
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
+=======
+
+const AvailableMeals = () => {
+    const [meals, setMeals] = useState([]);
+>>>>>>> d3a606fea618c667c0d93ddf6c6dc95400a5d443
   const [httpError, setHttpError] = useState();
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
         "https://react-http-8f8e0-default-rtdb.firebaseio.com/meals.json"
       );
+<<<<<<< HEAD
 
       if (!response.ok) {
         throw new Error("Something went wrong !");
       }
       const responseData = await response.json();
+=======
+const responseData = await response.json();
+>>>>>>> d3a606fea618c667c0d93ddf6c6dc95400a5d443
 
       const loadedMeals = [];
 
@@ -55,6 +69,7 @@ const AvailableMeals = () => {
       }
       setMeals(loadedMeals);
     };
+<<<<<<< HEAD
 
     fetchMeals().catch((error) => {
       setHttpError(error.message);
@@ -68,6 +83,10 @@ const AvailableMeals = () => {
       </section>
     );
   }
+=======
+fetchMeals();
+      }, []);
+>>>>>>> d3a606fea618c667c0d93ddf6c6dc95400a5d443
 
   const mealsList = meals.map((meal) => (
     <MealItem
